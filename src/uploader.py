@@ -348,7 +348,8 @@ class EasyFollow:
             "platform": "google",
             "user_type": "M",
         }
-        self._post("login", data=data)
+        resp = self._post("login", data=data)
+        logger.info("EasyView login response: %s", resp)
         logger.info("logged in to EasyView as %s", self.username)
 
     def close(self) -> None:
