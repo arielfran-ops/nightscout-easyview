@@ -294,6 +294,7 @@ class EasyFollow:
         """Return the last retrieved sensor status."""
         if self._sensor_status is None:
             status = self.get_status()
+            logger.info("EasyView status: %s", status)
             if len(status["monitorlist"]) != 1:
                 logger.error(
                     "Follower should have exactly one CGM user, got %i",
