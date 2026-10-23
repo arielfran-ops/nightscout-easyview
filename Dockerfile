@@ -19,4 +19,4 @@ RUN chown -R appuser:appuser /home/appuser
 USER appuser
 
 # Run uploader
-CMD ["python", "uploader.py"]
+CMD ["sh", "-c", "mkdir -p /home/appuser/.nightscout_easyview && cp /etc/secrets/secrets.yaml /home/appuser/.nightscout_easyview/ && python uploader.py"]
